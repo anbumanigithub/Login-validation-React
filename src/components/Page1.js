@@ -1,24 +1,21 @@
 import React, { useState } from 'react'; 
 const Page1 = ({ formData, handleChange }) => {
     const [errors, setErrors] = useState({});
- 
-
     const validate = () => {
         const newErrors = {};
         if (!formData.name) newErrors.name = 'Name is required';
         if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Valid email is required';
-        if (!formData.age || formData.age <= 0) newErrors.age = 'Age must be a positive number';
+        if (!formData.age || formData.age <=-1) newErrors.age = 'Age must be a positive number';
         if (!formData.city) newErrors.city = 'City is required';
         setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        return Object.keys(newErrors).length ===0;
     };
-
+    
     const handleNext = () => {
         if (validate()) {
-            // Show popup message
-            alert('All data is correct! Pls click blue color next button to redirect next page');
-            // Navigate to the next page
           
+            alert('All data is correct! Pls click blue color next button to redirect next page');
+        
         }
     };
 
@@ -37,6 +34,7 @@ const Page1 = ({ formData, handleChange }) => {
                     className="form-control"
                 />
                 {errors.name && <div className="text-danger">{errors.name}</div>}
+
             </div>
             <div className="mb-3">
                 <label htmlFor="email" className="form-label text-white">Email</label>

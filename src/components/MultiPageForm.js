@@ -1,5 +1,4 @@
-// src/MultiPageForm.js
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Page1 from './Page1';
 import Page2 from './Page2';

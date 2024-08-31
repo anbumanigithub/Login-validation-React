@@ -11,17 +11,16 @@ const Page2 = ({ formData, handleChange }) => {
         if (!formData.address) newErrors.address = 'Address is required';
         if (!formData.phoneNumber || !/^\d{10}$/.test(formData.phoneNumber)) newErrors.phoneNumber = 'Valid phone number is required';
         if (!formData.country) newErrors.country = 'Country is required';
-        if (!formData.zipCode || !/^\d{5}$/.test(formData.zipCode)) newErrors.zipCode = 'Valid zip code is required';
+        if (!formData.zipCode || !/^\d{6}$/.test(formData.zipCode)) newErrors.zipCode = 'Valid zip code is required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
     const handleNext = () => {
         if (validate()) {
-            alert('All data is correct! Pls click blue color Next button to redirect next page if neewd to edit click  grey color previous button');
+            alert('All data is correct! Pls click blue color Next button to redirect next page if need to edit click  grey color previous button');
         }
     };
-  
 
     return (
         <div className="container mt-4 p-4 rounded" style={{backgroundColor:"rgb(31, 150, 150)"}}>
